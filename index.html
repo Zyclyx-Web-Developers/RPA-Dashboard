@@ -36,17 +36,35 @@
             background: transparent !important;
             border: none;
         }
+
+        th {
+            font-size: 1.8rem;
+        }
+
+        th select {
+            margin: 1rem 0 0 -2px;
+            font-size: 1.2rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
+            border-radius: 0.5rem;
+            color: #6495ed;
+        }
+
+        th option {
+            margin: 0.8rem 0;
+            color: #454545;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
+        <div class="py-5 text-center">
+            <h2>RPA Dashboard</h2>
+        </div>
 
-        <div class="filters"></div>
         <table id="example" class="display">
-            <div class="py-5 text-center">
-                <h2>RPA Dashboard</h2>
-            </div>
+
             <thead>
                 <tr>
                     <th>S No</th>
@@ -57,6 +75,14 @@
                 </tr>
             </thead>
             <tbody>
+                <!--for filter   -->
+                <!-- <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
                 <tr>
                     <td>1</td>
                     <td>12</td>
@@ -268,12 +294,13 @@
         $(document).ready(function () {
             $('#example').DataTable({
                 initComplete: function () {
-                    this.api().columns([2, 3, 4]).every(function () {
+                    this.api().columns().every(function () {
+
+
                         var column = this;
                         var select = $('<select><option value="">Show All</option></select>')
-                            .appendTo($(column.footer()).empty())
-                            //.appendTo('#filters')
-                            //.appendTo($(column.header()).empty())
+                            //.appendTo($(column.footer()).empty())
+                            .appendTo($(column.header()))
                             .on('change', function () {
                                 // TODO - Reset table data on select
                                 var val = $.fn.dataTable.util.escapeRegex(
@@ -285,8 +312,6 @@
                                     .draw();
                             });
 
-
-
                         column.data().unique().sort().each(function (d, j) {
                             if (column.search() === '^' + d + '$') {
                                 select.append('<option value="' + d + '" selected="selected">' + d + '</option>')
@@ -294,6 +319,11 @@
                                 select.append('<option value="' + d + '">' + d + '</option>')
                             }
                         });
+
+                        $(select).click(function (e) {
+                            e.stopPropagation();
+                        });
+
                     });
                 }
             });
