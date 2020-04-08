@@ -5,18 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detailed Report</title>
-
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 
+    <!-- Latest compiled and minified CSS -->
+    <style>
+        th::after {
+            content: '';
+            opacity: 0 !important;
+        }
 
+        th::before {
+            content: '';
+            opacity: 0 !important;
+        }
+
+        .container {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .container h2 {
+            padding: 1rem 0;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container py-5">
+    <div class="container">
+
+        <div class="filters"></div>
         <table id="example" class="display">
+            <div class="py-5 text-center">
+                <h2>RPA Dashboard</h2>
+            </div>
             <thead>
                 <tr>
                     <th>S No</th>
@@ -231,6 +255,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+
     <script>
 
         // filter dropdowns
@@ -239,8 +264,10 @@
                 initComplete: function () {
                     this.api().columns([2, 3, 4]).every(function () {
                         var column = this;
-                        var select = $('<select><option value="">All</option></select>')
+                        var select = $('<select><option value="">Show All</option></select>')
                             .appendTo($(column.footer()).empty())
+                            //.appendTo('#filters')
+                            //.appendTo($(column.header()).empty())
                             .on('change', function () {
                                 // TODO - Reset table data on select
                                 var val = $.fn.dataTable.util.escapeRegex(
