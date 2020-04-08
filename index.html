@@ -5,265 +5,241 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detailed Report</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.semanticui.min.css">
+
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/1.0.1/css/searchPanes.semanticui.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.1/css/select.semanticui.min.css">
-    <style>
-        tr {
-            text-align: center;
-        }
-    </style>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
 </head>
 
 <body>
-    <table id="example" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>S No</th>
-                <th>InputData</th>
-                <th>Status</th>
-                <th>Exception Reason</th>
-                <th>ProcessName</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>S No</th>
-                <th>InputData</th>
-                <th>Status</th>
-                <th>Exception Reason</th>
-                <th>ProcessName</th>
-            </tr>
-        </tfoot>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>12</td>
-                <td>Completed Case</td>
-                <td> - </td>
-                <td>OddNumberProcess</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>25</td>
-                <td>Completed Case</td>
-                <td></td>
-                <td>OddNumberProcess</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>34</td>
-                <td>Completed Case</td>
-                <td></td>
-                <td>OddNumberProcess</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>44</td>
-                <td>Completed Case</td>
-                <td></td>
-                <td>OddNumberProcess</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>48</td>
-                <td>Completed Case</td>
-                <td></td>
-                <td>OddNumberProcess</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>55</td>
-                <td>Completed Case</td>
-                <td></td>
-                <td>OddNumberProcess</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>67</td>
-                <td>Completed Case</td>
-                <td></td>
-                <td>OddNumberProcess</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>A47</td>
-                <td>Exception Case</td>
-                <td>Business Exception - Not an
-                    integer
-                    input</td>
-                <td>OddNumberProcess</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>ABC</td>
-                <td>Exception Case</td>
-                <td>Business Exception - Not an
-                    integer
-                    input</td>
-                <td>OddNumberProcess</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>8148363273</td>
-                <td>Unable to send SMS</td>
-                <td>System Exception - Home Page
-                    not
-                    exist</td>
-                <td>Way2SMSProcess</td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>81483632733</td>
-                <td>Unable to send SMS</td>
-                <td>Business Exception - Phone
-                    Number is
-                    invalid</td>
-                <td>Way2SMSProcess</td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>9724961867</td>
-                <td>Unable to send SMS</td>
-                <td>Business Exception - Message
-                    exceeds
-                    the allowed limit</td>
-                <td>Way2SMSProcess</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>987934411</td>
-                <td>Unable to send SMS</td>
-                <td>Business Exception - Phone
-                    Number is
-                    invalid</td>
-                <td>Way2SMSProcess</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>8148363273</td>
-                <td>Unable to send SMS</td>
-                <td>System Exception - Home Page
-                    not
-                    exist</td>
-                <td>Way2SMSProcess</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>8148378658</td>
-                <td>Completed</td>
-                <td></td>
-                <td>Way2SMSProcess</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>9724961867</td>
-                <td>Completed</td>
-                <td></td>
-                <td>Way2SMSProcess</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>987934411</td>
-                <td>Unable to send SMS</td>
-                <td>Business Exception - Phone
-                    Number is
-                    invalid</td>
-                <td>Way2SMSProcess</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>11 + 25</td>
-                <td>Completed</td>
-                <td></td>
-                <td>Sum of 2 numbers</td>
-            </tr>
-            <tr>
-                <td>19</td>
-                <td>11 + 53</td>
-                <td>Completed</td>
-                <td></td>
-                <td>Sum of 2 numbers</td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>14 + 52</td>
-                <td>Completed</td>
-                <td></td>
-                <td>Sum of 2 numbers</td>
-            </tr>
-            <tr>
-                <td>21</td>
-                <td>333 + 63</td>
-                <td>Exception</td>
-                <td>System Exception - Input
-                    number
-                    is
-                    out of bound</td>
-                <td>Sum of 2 numbers</td>
-            </tr>
-            <tr>
-                <td>22</td>
-                <td>41 + 78</td>
-                <td>Completed</td>
-                <td></td>
-                <td>Sum of 2 numbers</td>
-            </tr>
-            <tr>
-                <td>23</td>
-                <td>44 + 43</td>
-                <td>Completed</td>
-                <td></td>
-                <td>Sum of 2 numbers</td>
-            </tr>
-            <tr>
-                <td>24</td>
-                <td>45 + 23</td>
-                <td>Completed</td>
-                <td></td>
-                <td>Sum of 2 numbers</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>55 + 91</td>
-                <td>Completed</td>
-                <td></td>
-                <td>Sum of 2 numbers</td>
-            </tr>
-            <tr>
-                <td>26</td>
-                <td>A34 + 13</td>
-                <td>Exception</td>
-                <td>Business Exception - Input
-                    is
-                    incorrect</td>
-                <td>Sum of 2 numbers</td>
-            </tr>
-            <tr>
-                <td>27</td>
-                <td>A53 + 21</td>
-                <td>Exception</td>
-                <td>Business Exception - Input
-                    is
-                    incorrect</td>
-                <td>Sum of 2 numbers</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <div class="container py-5">
+        <table id="example" class="display">
+            <thead>
+                <tr>
+                    <th>S No</th>
+                    <th>InputData</th>
+                    <th>Status</th>
+                    <th>Exception Reason</th>
+                    <th>ProcessName</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>12</td>
+                    <td>Completed Case</td>
+                    <td>NA</td>
+                    <td>OddNumberProcess</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>25</td>
+                    <td>Completed Case</td>
+                    <td>NA</td>
+                    <td>OddNumberProcess</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>34</td>
+                    <td>Completed Case</td>
+                    <td>NA</td>
+                    <td>OddNumberProcess</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>44</td>
+                    <td>Completed Case</td>
+                    <td>NA</td>
+                    <td>OddNumberProcess</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>48</td>
+                    <td>Completed Case</td>
+                    <td>NA</td>
+                    <td>OddNumberProcess</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>55</td>
+                    <td>Completed Case</td>
+                    <td>NA</td>
+                    <td>OddNumberProcess</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>67</td>
+                    <td>Completed Case</td>
+                    <td>NA</td>
+                    <td>OddNumberProcess</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>A47</td>
+                    <td>Exception Case</td>
+                    <td>Business Exception - Not an integer input</td>
+                    <td>OddNumberProcess</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>ABC</td>
+                    <td>Exception Case</td>
+                    <td>Business Exception - Not an integer input</td>
+                    <td>OddNumberProcess</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>8148363273</td>
+                    <td>Unable to send SMS</td>
+                    <td>System Exception - Home Page not exist</td>
+                    <td>Way2SMSProcess</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>81483632733</td>
+                    <td>Unable to send SMS</td>
+                    <td>Business Exception - Phone Number is invalid</td>
+                    <td>Way2SMSProcess</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>9724961867</td>
+                    <td>Unable to send SMS</td>
+                    <td>Business Exception - Message exceeds the allowed limit</td>
+                    <td>Way2SMSProcess</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>987934411</td>
+                    <td>Unable to send SMS</td>
+                    <td>Business Exception - Phone Number is invalid</td>
+                    <td>Way2SMSProcess</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>8148363273</td>
+                    <td>Unable to send SMS</td>
+                    <td>System Exception - Home Page not exist</td>
+                    <td>Way2SMSProcess</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>8148378658</td>
+                    <td>Completed</td>
+                    <td>NA</td>
+                    <td>Way2SMSProcess</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>9724961867</td>
+                    <td>Completed</td>
+                    <td>NA</td>
+                    <td>Way2SMSProcess</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>987934411</td>
+                    <td>Unable to send SMS</td>
+                    <td>Business Exception - Phone Number is invalid</td>
+                    <td>Way2SMSProcess</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>11 + 25</td>
+                    <td>Completed</td>
+                    <td>NA</td>
+                    <td>Sum of 2 numbers</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>11 + 53</td>
+                    <td>Completed</td>
+                    <td>NA</td>
+                    <td>Sum of 2 numbers</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>14 + 52</td>
+                    <td>Completed</td>
+                    <td>NA</td>
+                    <td>Sum of 2 numbers</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>333 + 63</td>
+                    <td>Exception</td>
+                    <td>System Exception - Input number is out of bound</td>
+                    <td>Sum of 2 numbers</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>41 + 78</td>
+                    <td>Completed</td>
+                    <td>NA</td>
+                    <td>Sum of 2 numbers</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>44 + 43</td>
+                    <td>Completed</td>
+                    <td>NA</td>
+                    <td>Sum of 2 numbers</td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>45 + 23</td>
+                    <td>Completed</td>
+                    <td>NA</td>
+                    <td>Sum of 2 numbers</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>55 + 91</td>
+                    <td>Completed</td>
+                    <td>NA</td>
+                    <td>Sum of 2 numbers</td>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td>A34 + 13</td>
+                    <td>Exception</td>
+                    <td>Business Exception - Input is incorrect</td>
+                    <td>Sum of 2 numbers</td>
+                </tr>
+                <tr>
+                    <td>27</td>
+                    <td>A53 + 21</td>
+                    <td>Exception</td>
+                    <td>Business Exception - Input is incorrect</td>
+                    <td>Sum of 2 numbers</td>
+                </tr>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Status</th>
+                    <th>Exception Reason</th>
+                    <th>ProcessName</th>
+                </tr>
+            </tfoot>
+            </tbody>
+        </table>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
     <script>
 
         // filter dropdowns
         $(document).ready(function () {
             $('#example').DataTable({
                 initComplete: function () {
-                    this.api().columns().every(function () {
+                    this.api().columns([2, 3, 4]).every(function () {
                         var column = this;
-                        var select = $('<select><option value=""></option></select>')
+                        var select = $('<select><option value="">All</option></select>')
                             .appendTo($(column.footer()).empty())
                             .on('change', function () {
                                 // TODO - Reset table data on select
@@ -276,9 +252,7 @@
                                     .draw();
                             });
 
-                        // column.data().unique().sort().each(function (d, j) {
-                        //     select.append('<option value="' + d + '">' + d + '</option>')
-                        // });
+
 
                         column.data().unique().sort().each(function (d, j) {
                             if (column.search() === '^' + d + '$') {
